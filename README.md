@@ -46,6 +46,10 @@ MDX içinde kullanılabilen bileşenler:
 
 `<Figure>` yerel `.mp4` / `.webm` dosyasını GIF gibi oynatır (sessiz, döngülü, otomatik; tıklayınca durur/devam eder); ses ve kontroller için `controls` ekle.
 
+Klipler ekrana 400px yaklaştığında yüklenir, yalnızca ekranda ve sekme açıkken oynar. Kullanıcının durdurduğu klip kendiliğinden devam etmez. İsteğe bağlı `poster="/projects/slug/preview.jpg"` ile yükleme öncesi görsel eklenebilir. Yükleme hatasında klibe tıklamak yeniden dener.
+
+Yeni MP4 dosyalarında oynatma bilgisini başa almak için `node scripts/faststart.mjs public/projects/<slug>` çalıştır. Bu işlem görüntü/ses kalitesini ve dosya boyutunu değiştirmez; sıkıştırma için `clip.mjs` kullanılır. Kısa, yaklaşık 960px genişlikte klipler tercih et; uzun 1080p kayıtlar yavaş bağlantılarda hâlâ bekletebilir.
+
 Yardımcı scriptler:
 
 - Geçici kapak: `node scripts/placeholder.mjs <slug> [hex-renk]`

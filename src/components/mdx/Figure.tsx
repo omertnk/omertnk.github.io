@@ -15,11 +15,13 @@ export function Figure({
   src,
   caption,
   alt,
+  poster,
   controls = false,
 }: {
   src: string;
   caption?: string;
   alt?: string;
+  poster?: string;
   controls?: boolean;
 }) {
   const isYouTube = /youtu\.?be/.test(src);
@@ -27,9 +29,9 @@ export function Figure({
 
   let media;
   if (isYouTube || (isClip && controls)) {
-    media = <Video src={src} title={alt ?? caption} />;
+    media = <Video src={src} title={alt ?? caption} poster={poster} />;
   } else if (isClip) {
-    media = <Clip src={src} label={alt ?? caption} />;
+    media = <Clip src={src} label={alt ?? caption} poster={poster} />;
   } else {
     // eslint-disable-next-line @next/next/no-img-element
     media = <img src={src} alt={alt ?? caption ?? ""} loading="lazy" className="!mt-0" />;

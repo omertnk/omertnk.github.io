@@ -13,10 +13,15 @@ export function Video({ src, title = "Video", poster }: { src: string; title?: s
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
+          loading="lazy"
           className="h-full w-full"
         />
       </div>
     );
   }
-  return <video src={src} poster={poster} controls playsInline preload="metadata" />;
+  return (
+    <video src={src} poster={poster} controls playsInline preload="none" className="aspect-video object-contain">
+      Your browser does not support video playback.
+    </video>
+  );
 }
