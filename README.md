@@ -1,6 +1,6 @@
 # Portfolio
 
-Next.js 16 + Tailwind + MDX ile kişisel portfolio sitesi. Vercel'e deploy edilmek üzere hazırlanmıştır.
+Next.js 16 + Tailwind + MDX ile kişisel portfolio sitesi. GitHub Pages'a (`https://omertnk.github.io`) statik olarak deploy edilmek üzere hazırlanmıştır.
 
 ## Geliştirme
 
@@ -61,13 +61,11 @@ Yardımcı scriptler:
 - `src/app/about/page.tsx` — Hakkımda metni
 - `src/app/globals.css` — renk paleti (`:root` değişkenleri)
 
-## Vercel'e deploy
+## GitHub Pages'a deploy
 
-1. Repo'yu GitHub'a push et.
-2. [vercel.com](https://vercel.com) → **Add New Project** → repo'yu seç → **Deploy**. Ayar gerekmez.
-3. Verilen adresi `src/config/site.ts` içindeki `url` alanına yaz (sitemap ve OG için).
-
-Her `git push` sonrası Vercel otomatik yeniden deploy eder.
+1. GitHub'da repo adını `omertnk.github.io` yap ve **Public** olarak ayarla.
+2. Repo **Settings → Pages → Source** ayarını **GitHub Actions** seç.
+3. `main` dalına `git push` yaptığında `.github/workflows/deploy.yml` otomatik olarak `out/` çıktısını üretip `https://omertnk.github.io` adresinde yayınlar.
 
 ## Yapı
 

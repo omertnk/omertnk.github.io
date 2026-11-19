@@ -6,7 +6,7 @@ export const site = {
   title: "Game & Software Developer",
   description:
     "I develop multiplayer games using Unreal Engine. I am actively working on a zombie survival game.",
-  url: "https://omertnk.vercel.app",
+  url: "https://omertnk.github.io",
   email: "omertank38@gmail.com",
   location: "Türkiye",
 
